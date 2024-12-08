@@ -85,14 +85,19 @@ def organizeInventory(inventory):
 
 
 def organizeInventory(inventory: list[dict]):
-    # complex, reduce-based solution
-    return dict(functools.reduce(
+    # reduce-based solution with dict copying which is bad, but a separate function is worse in performance in the remote
+    return functools.reduce(
         lambda accumulated, curr_elem: {
-                curr_elem["category"]: {
-                    curr_elem["name"]: accumulated.get(curr_elem["category"], {}).get(
-                        curr_elem["name"], 0) + curr_elem["quantity"]
-                }
-                }, inventory, {}))
+            **accumulated,
+            curr_elem["category"]: {
+                **accumulated.get(curr_elem["category"], {}),
+                curr_elem["name"]: accumulated.get(curr_elem["category"], {}).get(
+                    curr_elem["name"], 0) + curr_elem["quantity"]
+            }
+        },
+        inventory,
+        {}
+    )
 
 
 print(organizeInventory([
