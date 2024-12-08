@@ -70,8 +70,8 @@ def organizeShoes(shoes):
     result = []
     for k, v in groups.items():
         minv = min(v)
-        if minv > 0:
-            result.extend([k]*minv)
+        # if minv > 0: no need to check this, if its zero -> none added
+        result.extend([k]*minv)
     # oneliner (worse perf)     return [k for k, v in groups.items() for _ in range(min(v)) if min(v) > 0]
     return result
 
