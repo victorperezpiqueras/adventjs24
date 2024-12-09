@@ -10,7 +10,7 @@ function organizeShoes(shoes) {
     }
     currentValue[shoes[currentIndex].size][shoes[currentIndex].type] += 1;
 
-    return currentValue;
+    return { ...previousValue, currentValue };
   }, {});
   return Object.keys(a).map((key) => Math.min(a[key]["I"], a[key]["R"]));
 }
