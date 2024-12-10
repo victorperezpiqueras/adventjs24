@@ -59,7 +59,7 @@ def organizeShoes(shoes):
 
 
 def organizeShoes(shoes):
-    # optimized
+    # optimized 5 stars
     groups = {}
     for shoe in shoes:
         if shoe['size'] not in groups:
