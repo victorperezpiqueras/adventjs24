@@ -1,30 +1,30 @@
 """
-¡El grinch 👹 ha pasado por el taller de Santa Claus! Y menudo desastre ha montado. Ha cambiado el orden de algunos paquetes, por lo que los envíos no se pueden realizar.
+The grinch 👹 has passed through Santa Claus's workshop! And what a mess he has made. He has changed the order of some packages, so shipments cannot be made.
 
-Por suerte, el elfo Pheralb ha detectado el patrón que ha seguido el grinch para desordenarlos. Nos ha escrito las reglas que debemos seguir para reordenar los paquetes. Las instrucciones que siguen son:
+Luckily, the elf Pheralb has detected the pattern the grinch followed to jumble them. He has written the rules that we must follow to reorder the packages. The instructions are as follows:
 
-    Recibirás un string que contiene letras y paréntesis.
-    Cada vez que encuentres un par de paréntesis, debes voltear el contenido dentro de ellos.
-    Si hay paréntesis anidados, resuelve primero los más internos.
-    Devuelve el string resultante con los paréntesis eliminados, pero con el contenido volteado correctamente.
+    You will receive a string containing letters and parentheses.
+    Every time you find a pair of parentheses, you need to reverse the content within them.
+    If there are nested parentheses, solve the innermost ones first.
+    Return the resulting string with parentheses removed, but with the content correctly reversed.
 
-Nos ha dejado algunos ejemplos:
+He left us some examples:
 
 fixPackages('a(cb)de')
 // ➞ "abcde"
-// Volteamos "cb" dentro de los paréntesis
+// We reverse "cb" inside the parentheses
 
 fixPackages('a(bc(def)g)h')
 // ➞ "agdefcbh"
-// 1º volteamos "def" → "fed", luego volteamos "bcfedg" → "gdefcb"
+// 1st we reverse "def" → "fed", then we reverse "bcfedg" → "gdefcb"
 
 fixPackages('abc(def(gh)i)jk')
 // ➞ "abcighfedjk"
-// 1º volteamos "gh" → "hg", luego "defhgi" → "ighfed"
+// 1st we reverse "gh" → "hg", then "defhgi" → "ighfed"
 
 fixPackages('a(b(c))e')
 // ➞ "acbe"
-// 1º volteamos "c" → "c", luego "bc" → "cb"
+// 1st we reverse "c" → "c", then "bc" → "cb"
 """
 
 

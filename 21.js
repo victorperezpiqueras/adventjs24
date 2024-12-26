@@ -1,9 +1,9 @@
 /* 
-Santa Claus 🎅 está decorando un árbol de Navidad mágico 🪄, que este año tiene una estructura especial en forma de árbol binario. Cada nodo del árbol representa un regalo, y Santa quiere saber la altura del árbol para colocar la estrella mágica en la punta.
+Santa Claus 🎅 is decorating a magical Christmas tree 🪄, which this year has a special structure in the form of a binary tree. Each node of the tree represents a gift, and Santa wants to know the height of the tree to place the magical star at the top.
 
-Tu tarea es escribir una función que calcule la altura de un árbol binario. La altura de un árbol binario se define como el número máximo de niveles desde la raíz hasta una hoja. Un árbol vacío tiene una altura de 0.
+Your task is to write a function that calculates the height of a binary tree. The height of a binary tree is defined as the maximum number of levels from the root to a leaf. An empty tree has a height of 0.
 
-// Definición del árbol
+// Tree definition
 const tree = {
   value: '🎁',
   left: {
@@ -30,16 +30,16 @@ const tree = {
   }
 }
 
-// Representación gráfica del árbol:
+// Graphical representation of the tree:
 //        🎁
 //       /   \
 //     🎄     ❄️
 //    /  \      \
 //  ⭐   🎅      🦌
 
-// Llamada a la función
+// Function call
 treeHeight(tree)
-// Devuelve: 3
+// Returns: 3
 */
 
 /**

@@ -1,4 +1,8 @@
+/** @param {string} packages with parentheses
+ *  @returns {string} Fixed and sorted packages
+ */
 function fixPackages(packages) {
+  // timeouts
   let returnPackage = "";
   let i = 0;
 
@@ -23,3 +27,29 @@ function fixPackages(packages) {
 
 // Example usage:
 console.log(fixPackages("abc(def(gh)i)jk")); // Expected output: 'abcighfedjk'
+
+/** @param {string} packages with parentheses
+ *  @returns {string} Fixed and sorted packages
+ */
+function fixPackages(packages) {
+  // gpt spoiled solution
+  let stack = [];
+  let returnPackage = "";
+  let temp = [];
+
+  for (let char of packages) {
+    if (char === "(") {
+      // Push the current result to the stack and start a new temp
+      stack.push(returnPackage);
+      returnPackage = "";
+    } else if (char === ")") {
+      // Reverse the current result and append to the previous context
+      returnPackage = stack.pop() + returnPackage.split("").reverse().join("");
+    } else {
+      // Add regular characters to the result
+      returnPackage += char;
+    }
+  }
+
+  return returnPackage;
+}

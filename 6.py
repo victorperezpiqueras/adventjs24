@@ -1,14 +1,14 @@
 """
-Ya hemos empaquetado cientos de regalos 🎁… pero a un elfo se le ha olvidado revisar si el regalo, representado por un asterisco *, está dentro de la caja.
+We have already wrapped hundreds of presents 🎁… but an elf forgot to check if the present, represented by an asterisk *, is inside the box.
 
-La caja tiene un regalo (*) y cuenta como dentro de la caja si:
+The box has a present (*) and counts as "inside the box" if:
 
-    Está rodeada por # en los bordes de la caja.
-    El * no está en los bordes de la caja.
+    It is completely surrounded by # on the box's edges.
+    The * is not on the box's edges.
 
-Ten en cuenta entonces que el * puede estar dentro, fuera o incluso no estar. Y debemos devolver true si el * está dentro de la caja y false en caso contrario.
+Keep in mind that the * can be inside, outside, or may not even be there. We must return true if the * is inside the box and false otherwise.
 
-Ejemplos:
+Examples:
 
 inBox([
   "###",

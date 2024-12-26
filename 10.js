@@ -1,41 +1,40 @@
 /*  
-Los elfos programadores están creando un pequeño ensamblador mágico para controlar las máquinas del taller de Santa Claus.
+The elf programmers are creating a small magical assembler to control the machines in Santa Claus's workshop.
 
-Para ayudarles, vamos a implementar un intérprete sencillo que soporte las siguientes instrucciones mágicas:
+To assist them, we will implement a simple interpreter that supports the following magical instructions:
 
-    MOV x y: Copia el valor x (puede ser un número o el contenido de un registro) en el registro y
-    INC x: Incrementa en 1 el contenido del registro x
-    DEC x: Decrementa en 1 el contenido del registro x
-    JMP x y: Si el valor del registro x es 0 entonces salta a la instrucción en el índice y y sigue ejecutándose el programa desde ahí.
+    MOV x y: Copies the value x (which can be a number or the content of a register) into register y
+    INC x: Increments the content of register x by 1
+    DEC x: Decrements the content of register x by 1
+    JMP x y: If the value in register x is 0, then jumps to the instruction at index y and continues executing the program from there.
 
-Comportamiento esperado:
+Expected behavior:
 
-    Si se intenta acceder, incrementar o decrementar a un registro que no ha sido inicializado, se tomará el valor 0 por defecto.
-    El salto con JMP es absoluto y lleva al índice exacto indicado por y.
-    Al finalizar, el programa debe devolver el contenido del registro A. Si A no tenía un valor definido, retorna undefined.
+    If an attempt is made to access, increment, or decrement a register that has not been initialized, the default value 0 will be used.
+    The jump with JMP is absolute and goes to the exact index indicated by y.
+    Upon completion, the program should return the content of register A. If A did not have a defined value, it returns undefined.
 
 const instructions = [
-  'MOV -1 C', // copia -1 al registro 'C',
-  'INC C', // incrementa el valor del registro 'C'
-  'JMP C 1', // salta a la instrucción en el índice 1 si 'C' es 0
-  'MOV C A', // copia el registro 'C' al registro 'a',
-  'INC A' // incrementa el valor del registro 'a'
+  'MOV -1 C', // copies -1 to register 'C',
+  'INC C', // increments the value of register 'C'
+  'JMP C 1', // jumps to the instruction at index 1 if 'C' is 0
+  'MOV C A', // copies register 'C' to register 'A',
+  'INC A' // increments the value of register 'A'
 ]
 
 compile(instructions) // -> 2
 
+ Step-by-step execution:
+ 0: MOV -1 C -> The register C receives the value -1
+ 1: INC C    -> The register C becomes 0
+ 2: JMP C 1  -> C is 0, jumps to the instruction at index 1
+ 1: INC C    -> The register C becomes 1
+ 2: JMP C 1  -> C is 1, the instruction is ignored
+ 3: MOV C A  -> Copies register C to A. Now A is 1
+ 4: INC A    -> The register A becomes 2
 
- Ejecución paso a paso:
- 0: MOV -1 C -> El registro C recibe el valor -1
- 1: INC C    -> El registro C pasa a ser 0
- 2: JMP C 1  -> C es 0, salta a la instrucción en el índice 1
- 1: INC C    -> El registro C pasa a ser 1
- 2: JMP C 1  -> C es 1, ignoramos la instrucción
- 3: MOV C A  -> Copiamos el registro C en A. Ahora A es 1
- 4: INC A    -> El registro A pasa a ser 2
- 
 
- Nota: Los registros que no han sido inicializados previamente se inicializan a 0.
+ Note: Registers that have not been previously initialized are initialized to 0.
  */
 
 /**

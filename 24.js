@@ -112,5 +112,5 @@ const tree4 = {
   right: { value: "🎅" },
 };
 
-//console.log(isTreesSynchronized(tree1, tree2)); // [true, '🎄']
+console.log(isTreesSynchronized(tree1, tree2)); // [true, '🎄']
 console.log(isTreesSynchronized(tree1, tree3)); // [false, '🎄']

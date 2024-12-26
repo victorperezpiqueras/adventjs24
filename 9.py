@@ -1,49 +1,55 @@
 """
-Los elfos están jugando con un tren 🚂 mágico que transporta regalos. Este tren se mueve en un tablero representado por un array de strings.
+The elves are playing with a magical train 🚂 that carries gifts. This train moves on a board represented by an array of strings.
 
-El tren está compuesto por una locomotora (@), seguida de sus vagones (o), y debe recoger frutas mágicas (*) que le sirve de combustible. El movimiento del tren sigue las siguientes reglas:
+The train consists of an engine (@), followed by its carriages (o), and must collect magical fruits (*) which serve as fuel. The movement of the train follows these rules:
 
-Recibirás dos parámetros board y mov.
+You will receive two parameters board and mov.
 
-board es un array de strings que representa el tablero:
+board is an array of strings that represents the board:
 
-    @ es la locomotora del tren.
-    o son los vagones del tren.
-    * es una fruta mágica.
-    · son espacios vacíos.
+    @ is the train's engine.
+    o are the train's carriages.
+    * is a magical fruit.
+    · are empty spaces.
 
-mov es un string que indica el próximo movimiento del tren desde la cabeza del tren @:
+mov is a string that indicates the next movement of the train from the train's head @:
 
-    'L': izquierda
-    'R': derecha
-    'U': arriba
-    'D': abajo.
+    'L': left
+    'R': right
+    'U': up
+    'D': down.
 
-Con esta información, debes devolver una cadena de texto:
+With this information, you must return a string:
 
-    'crash': Si el tren choca contra los bordes del tablero o contra sí mismo.
-    'eat': Si el tren recoge una fruta mágica (*).
-    'none': Si avanza sin chocar ni recoger ninguna fruta mágica.
+    'crash': If the train crashes into the edges of the board or itself.
+    'eat': If the train collects a magical fruit (*).
+    'none': If it moves without crashing or collecting any magical fruit.
 
-Ejemplo:
+Example:
 
-const board = ['·····', '*····', '@····', 'o····', 'o····']
+const board = [
+  '·····',
+  '*····',
+  '@····',
+  'o····',
+  'o····'
+]
 
 console.log(moveTrain(board, 'U'))
 // ➞ 'eat'
-// Porque el tren se mueve hacia arriba y encuentra una fruta mágica
+// Because the train moves up and finds a magical fruit
 
 console.log(moveTrain(board, 'D'))
 // ➞ 'crash'
-// El tren se mueve hacia abajo y la cabeza se choca consigo mismo
+// The train moves down and the head crashes into itself
 
 console.log(moveTrain(board, 'L'))
 // ➞ 'crash'
-// El tren se mueve a la izquierda y se choca contra la pared
+// The train moves to the left and crashes into the wall
 
 console.log(moveTrain(board, 'R'))
 // ➞ 'none'
-// El tren se mueve hacia derecha y hay un espacio vacío en la derecha
+// The train moves to the right and there is empty space on the right
 """
 
 from typing import List, Literal

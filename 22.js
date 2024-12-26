@@ -52,94 +52,10 @@ function generateGiftSets(gifts) {
   return combinations;
 }
 
-function generateGiftSets(gifts) {
-  let combinations = [];
-  if (gifts.length == 1) return [gifts];
-  /* if (gifts.length == 2) {
-    for (let i = 0; i < gifts.length; i++) {
-      for (let j = 0; j < gifts.length; j++) {
-        combinations.push([gifts[i], gifts[j]]);
-      }
-    }
-  } */ else if (gifts.length > 1) {
-    for (let i = 0; i < gifts.length; i++) {
-      const gift = gifts[i];
-      let reducedList = [...gifts];
-      reducedList.splice(i, 1);
-      let innerCombs = generateGiftSets(reducedList);
-      for (let j = 0; j < innerCombs.length; j++) {
-        innerCombs[j].push(gift);
-        combinations = combinations.concat(innerCombs);
-      }
-    }
-  }
-
-  // Code here
-  return combinations;
-}
-
-/* function generateGiftSets(gifts) {
-  let combinationsDict = new Map();
-  let currentCombination = new Array(gifts.length).fill(false);
-  let index = gifts.length - 1;
-  while (index >= 0) {
-    if (currentCombination[index] == false) {
-      if (index < gifts.length - 1) {
-        index++;
-      } else {
-        currentCombination[index] = true;
-      }
-    } else if (currentCombination[index] == true) {
-      index--;
-      if (currentCombination[index] == false) {
-        currentCombination[index] = true;
-        for (let i = index + 1; i < gifts.length; i++) {
-          currentCombination[i] = false;
-        }
-        index = gifts.length - 1;
-      } else {
-        index--;
-      }
-    }
-    const result = gifts.filter((_, index) => currentCombination[index]);
-
-    combinationsDict.set(result.join(""), result);
-    // console.log(currentCombination);
-  }
-  return [...combinationsDict.values()].sort((a, b) => a.length - b.length);
-} */
-
-function generateGiftSets(gifts) {
-  let combinationsDict = new Map();
-  let currentCombination = new Array(gifts.length).fill(false);
-  let index = 0;
-  while (index < gifts.length) {
-    if (currentCombination[index] == false) {
-      if (index > 0) {
-        index--;
-      } else {
-        currentCombination[index] = true;
-      }
-    } else if (currentCombination[index] == true) {
-      index++;
-      if (currentCombination[index] == false) {
-        currentCombination[index] = true;
-        for (let i = 0; i < index; i++) {
-          currentCombination[i] = false;
-        }
-        index = 0;
-      } else {
-        index++;
-      }
-    }
-    const result = gifts.filter((_, index) => currentCombination[index]);
-    //const key = currentCombination.map((elem, index)=>) missing ordering of keys
-    combinationsDict.set(result.join(""), result);
-    // console.log(currentCombination);
-  }
-  return [...combinationsDict.values()].sort((a, b) => a.length - b.length);
-}
-
+/**
+ * @param {string[]} gifts - List of unique gifts.
+ * @returns {string[][]} - All possible combinations of gifts, sorted by length.
+ */
 function generateGiftSets(gifts) {
   // 1 star
   let sols = [];
@@ -181,6 +97,10 @@ function generateGiftSets(gifts) {
   return sortedArray;
 }
 
+/**
+ * @param {string[]} gifts - List of unique gifts.
+ * @returns {string[][]} - All possible combinations of gifts, sorted by length.
+ */
 function generateGiftSets(gifts) {
   // 1 star
   let sols = [];
@@ -190,7 +110,7 @@ function generateGiftSets(gifts) {
     otherGifts.splice(index, 1);
     if (otherGifts.length > 0) {
       const otherGifts2 = generateGiftSets(otherGifts);
-      sols = otherGifts2.concat(sols); //sols.concat(otherGifts2);
+      sols = otherGifts2.concat(sols);
     }
   }
   sols.push(gifts);

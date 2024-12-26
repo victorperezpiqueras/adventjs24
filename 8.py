@@ -1,25 +1,25 @@
 """
-¡Es hora de seleccionar a los renos más rápidos para los viajes de Santa! 🦌🎄
-Santa Claus ha organizado unas emocionantes carreras de renos para decidir cuáles están en mejor forma.
+It's time to select the fastest reindeer for Santa's journeys! 🦌🎄
+Santa Claus has organized exciting reindeer races to determine which ones are in the best shape.
 
-Tu tarea es mostrar el progreso de cada reno en una pista de nieve en formato isométrico.
+Your task is to display each reindeer's progress on a snow track in isometric format.
 
-La información que recibes:
+The information you receive:
 
-    indices: Un array de enteros que representan el progreso de cada reno en la pista:
-    0: El carril está vacío.
-    Número positivo: La posición actual del reno desde el inicio de la pista.
-    Número negativo: La posición actual del reno desde el final de la pista.
-    length: La longitud de cada carril.
+    indices: An array of integers representing each reindeer's progress on the track:
+    0: The lane is empty.
+    Positive number: The reindeer's current position from the beginning of the track.
+    Negative number: The reindeer's current position from the end of the track.
+    length: The length of each lane.
 
-Devuelve un string que represente la pista de la carrera:
+Return a string representing the race track:
 
-    Cada carril tiene exactamente length posiciones llenas de nieve (~).
-    Cada reno se representa con la letra r.
-    Los carriles están numerados al final con /1, /2, etc.
-    La vista es isométrica, por lo que los carriles inferiores están desplazados hacia la derecha.
+    Each lane has exactly length positions filled with snow (~).
+    Each reindeer is represented with the letter r.
+    Lanes are numbered at the end with /1, /2, etc.
+    The view is isometric, so the lower lanes are shifted to the right.
 
-Ejemplos:
+Examples:
 
 drawRace([0, 5, -3], 10)
 /*
@@ -39,8 +39,8 @@ drawRace([2, -1, 0, 5], 8)
 drawRace([3, 7, -2], 12)
 /*
   ~~~r~~~~~~~~ /1
- ~~~~~~~~r~~~ /2
-~~~~~~~~~r~~ /3
+ ~~~~~~~r~~~~ /2
+~~~~~~~~~~r~ /3
 */
 """
 

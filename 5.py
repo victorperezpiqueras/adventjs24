@@ -1,10 +1,12 @@
 """
-Los elfos 🧝🧝‍♂️ de Santa Claus han encontrado un montón de botas mágicas desordenadas en el taller. Cada bota se describe por dos valores:
+Santa Claus's elves 🧝🧝‍♂️ have found a bunch of mismatched magic boots in the workshop. Each boot is described by two values:
 
-    type indica si es una bota izquierda (I) o derecha (R).
-    size indica el tamaño de la bota.
+    type indicates if it's a left boot (I) or a right boot (R).
+    size indicates the size of the boot.
 
-Tu tarea es ayudar a los elfos a emparejar todas las botas del mismo tamaño que tengan izquierda y derecha. Para ello, debes devolver una lista con los tamaños disponibles después de emparejar las botas.
+Your task is to help the elves pair all the boots of the same size having a left and a right one. To do this, you should return a list of the available boots after pairing them.
+
+Note: You can have more than one pair of boots of the same size!
 
 const shoes = [
   { type: 'I', size: 38 },

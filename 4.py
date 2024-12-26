@@ -1,15 +1,15 @@
 """
-¡Es hora de poner el árbol de Navidad en casa! 🎄 Pero este año queremos que sea especial. Vamos a crear una función que recibe la altura del árbol (un entero positivo entre 1 y 100) y un carácter especial para decorarlo.
+It's time to put up the Christmas tree at home! 🎄 But this year we want it to be special. We're going to create a function that receives the height of the tree (a positive integer between 1 and 100) and a special character to decorate it.
 
-La función debe devolver un string que represente el árbol de Navidad, construido de la siguiente manera:
+The function should return a string that represents the Christmas tree, constructed as follows:
 
-    El árbol está compuesto de triángulos de caracteres especiales.
-    Los espacios en blanco a los lados del árbol se representan con guiones bajos _.
-    Todos los árboles tienen un tronco de dos líneas, representado por el carácter #.
-    El árbol siempre debe tener la misma longitud por cada lado.
-    Debes asegurarte de que el árbol tenga la forma correcta usando saltos de línea \n para cada línea.
+    The tree is made up of triangles of special characters.
+    The spaces on the sides of the tree are represented with underscores _.
+    All trees have a trunk of two lines, represented by the # character.
+    The tree should always have the same length on each side.
+    You must ensure the tree has the correct shape using line breaks \n for each line.
 
-Ejemplos:
+Examples:
 
 const tree = createXmasTree(5, '*')
 console.log(tree)
@@ -46,7 +46,7 @@ _____#_____
 _____#_____
 */
 
-Asegúrate de utilizar saltos de línea \n al final de cada línea, excepto en la última.
+Make sure to use line breaks \n at the end of each line, except for the last one.
 """
 
 

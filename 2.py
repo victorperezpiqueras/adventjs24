@@ -1,18 +1,18 @@
 """
-Santa Claus 🎅 quiere enmarcar los nombres de los niños buenos para decorar su taller 🖼️, pero el marco debe cumplir unas reglas específicas. Tu tarea es ayudar a los elfos a generar este marco mágico.
+Santa Claus 🎅 wants to frame the names of the good children to decorate his workshop 🖼️, but the frame must follow specific rules. Your task is to help the elves generate this magical frame.
 
-Reglas:
+Rules:
 
-    Dado un array de nombres, debes crear un marco rectangular que los contenga a todos.
-    Cada nombre debe estar en una línea, alineado a la izquierda.
-    El marco está construido con * y tiene un borde de una línea de ancho.
-    La anchura del marco se adapta automáticamente al nombre más largo más un margen de 1 espacio a cada lado.
+    Given an array of names, you must create a rectangular frame that contains all of them.
+    Each name must be on a line, aligned to the left.
+    The frame is built with * and has a border one line thick.
+    The width of the frame automatically adapts to the longest name plus a margin of 1 space on each side.
 
-Ejemplo de funcionamiento:
+Example of how it works:
 
 createFrame(['midu', 'madeval', 'educalvolpz'])
 
-// Resultado esperado:
+// Expected result:
 ***************
 * midu        *
 * madeval     *
@@ -21,14 +21,14 @@ createFrame(['midu', 'madeval', 'educalvolpz'])
 
 createFrame(['midu'])
 
-// Resultado esperado:
+// Expected result:
 ********
 * midu *
 ********
 
 createFrame(['a', 'bb', 'ccc'])
 
-// Resultado esperado:
+// Expected result:
 *******
 * a   *
 * bb  *

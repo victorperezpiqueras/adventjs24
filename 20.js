@@ -1,24 +1,24 @@
 /*
-Santa Claus 🎅 está revisando la lista de regalos que debe entregar esta Navidad. Sin embargo, algunos regalos faltan, otros están duplicados, y algunos tienen cantidades incorrectas. Necesita tu ayuda para resolver el problema.
+Santa Claus 🎅 is checking the list of gifts he must deliver this Christmas. However, some gifts are missing, others are duplicated, and some have incorrect quantities. He needs your help to solve the problem.
 
-Recibirás dos arrays:
+You will receive two arrays:
 
-    received: Lista con los regalos que Santa tiene actualmente.
-    expected: Lista con los regalos que Santa debería tener.
+    received: List with the gifts Santa currently has.
+    expected: List with the gifts Santa should have.
 
-Tu tarea es escribir una función que, dado received y expected, devuelva un objeto con dos propiedades:
+Your task is to write a function that, given received and expected, returns an object with two properties:
 
-    missing: Un objeto donde las claves son los nombres de los regalos faltantes y los valores son las cantidades que faltan.
-    extra: Un objeto donde las claves son los nombres de los regalos extra o duplicados y los valores son las cantidades que sobran.
+    missing: An object where the keys are the names of the missing gifts and the values are the quantities that are missing.
+    extra: An object where the keys are the names of the extra or duplicated gifts and the values are the quantities that are extra.
 
-Ten en cuenta que:
+Keep in mind that:
 
-    Los regalos pueden repetirse en ambas listas.
-    Las listas de regalos están desordenadas.
-    Si no hay regalos que falten o sobren, las propiedades correspondientes (missing o extra) deben ser objetos vacíos.
+    Gifts may be repeated in both lists.
+    The gift lists are unordered.
+    If there are no missing or extra gifts, the corresponding properties (missing or extra) should be empty objects.
 
 fixGiftList(['puzzle', 'car', 'doll', 'car'], ['car', 'puzzle', 'doll', 'ball'])
-// Devuelve:
+// Returns:
 // {
 //   missing: { ball: 1 },
 //   extra: { car: 1 }
@@ -28,7 +28,7 @@ fixGiftList(
   ['book', 'train', 'kite', 'train'],
   ['train', 'book', 'kite', 'ball', 'kite']
 )
-// Devuelve:
+// Returns:
 // {
 //   missing: { ball: 1, kite: 1 },
 //   extra: { train: 1 }
@@ -38,19 +38,18 @@ fixGiftList(
   ['bear', 'bear', 'car'],
   ['bear', 'car', 'puzzle', 'bear', 'car', 'car']
 )
-// Devuelve:
+// Returns:
 // {
 //   missing: { puzzle: 1, car: 2 },
 //   extra: {}
 // }
 
 fixGiftList(['bear', 'bear', 'car'], ['car', 'bear', 'bear'])
-// Devuelve:
+// Returns:
 // {
 //   missing: {},
 //   extra: {}
 // }
-
 */
 
 /**
