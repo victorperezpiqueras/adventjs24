@@ -32,7 +32,7 @@ console.log(fixPackages("abc(def(gh)i)jk")); // Expected output: 'abcighfedjk'
  *  @returns {string} Fixed and sorted packages
  */
 function fixPackages(packages) {
-  // gpt spoiled solution
+  // 5 stars gpt spoiled solution
   let stack = [];
   let returnPackage = "";
   let temp = [];

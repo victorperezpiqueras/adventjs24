@@ -141,10 +141,133 @@ function generateGiftSets(gifts) {
   });
 }
 
+/**
+ * @param {string[]} gifts - List of unique gifts.
+ * @returns {string[][]} - All possible combinations of gifts, sorted by length.
+ */
+function generateGiftSets(gifts) {
+  // 1 star
+  /* if (gifts.length <= 0) return []; */
+  //gifts.reverse();
+  let sols = [];
+  for (let index = 0; index < gifts.length; index++) {
+    const otherGifts = [...gifts];
+    otherGifts.splice(index, 1);
+    //     otherGifts.splice(gifts.length - index - 1, 1);
+
+    if (otherGifts.length > 0) {
+      const otherGifts2 = generateGiftSets(otherGifts);
+      //sols = sols.concat(otherGifts2);
+      sols = otherGifts2.concat(sols);
+    }
+  }
+  sols.push(gifts);
+  //sols.unshift(gifts);
+
+  sols = Array.from(
+    new Set(sols.map(JSON.stringify)) // Convert arrays to strings
+  ).map(JSON.parse);
+
+  /* sols = sols.sort((a, b) => {
+    return a.length - b.length;
+  }); */
+
+  const calculateKey = (arr) =>
+    arr.map((char) => gifts.indexOf(char) + 1).join("");
+
+  // Sort the array of arrays based on the calculated key
+
+  if (gifts.length == 4) {
+    console.log(sols);
+  }
+
+  sols.sort((a, b) => {
+    const keyA = Number(calculateKey(a));
+    const keyB = Number(calculateKey(b));
+    return keyA - keyB;
+  });
+  /*   sols = Object.values(
+    sols.reduce((groups, subarray) => {
+      const len = subarray.length;
+      groups[len] = groups[len] || [];
+      groups[len].push(subarray);
+      return groups;
+    }, {})
+  ).flatMap((group) => group.reverse()); */
+
+  /*   const calculateKey = (arr) =>
+    arr.reduce((sum, char) => sum + gifts.indexOf(char), 0);
+
+  const sortedArray = sols.sort((a, b) => {
+    const keyA = calculateKey(a);
+    const keyB = calculateKey(b);
+    return keyA - keyB; // Compare keys numerically
+  }); */
+
+  return sols.filter((arr) => arr.length > 0);
+}
+
+/**
+ * @param {string[]} gifts - List of unique gifts.
+ * @returns {string[][]} - All possible combinations of gifts, sorted by length.
+ */
+function generateGiftSets(gifts) {
+  let solsMap = new Map();
+  for (let index = 0; index < gifts.length; index++) {
+    const otherGifts = gifts.slice(0, index).concat(gifts.slice(index + 1));
+    if (otherGifts.length > 0) {
+      const otherGifts2 = generateGiftSets(otherGifts);
+      otherGifts2.forEach((giftSet) => {
+        const key = giftSet.map((gift) => gifts.indexOf(gift)).join(",");
+        solsMap.set(key, giftSet);
+      });
+    }
+  }
+
+  solsMap.set(JSON.stringify(gifts), gifts);
+
+  const calculateKey = (arr) =>
+    arr.map((char) => gifts.indexOf(char) + 1).join("");
+
+  let sols = Array.from(solsMap.values());
+
+  sols.sort((a, b) => {
+    const keyA = Number(calculateKey(a));
+    const keyB = Number(calculateKey(b));
+    return keyA - keyB;
+  });
+
+  return sols.filter((arr) => arr.length > 0);
+}
+
+/**
+ * @param {string[]} gifts - List of unique gifts.
+ * @returns {string[][]} - All possible combinations of gifts, sorted by length.
+ */
+function generateGiftSets(gifts) {
+  // 5 stars after checking backtracking algorithms
+  let sols = [];
+  const recursive = (start, result) => {
+    if (result.length > 0) sols.push([...result]);
+
+    for (let i = start; i < gifts.length; i++) {
+      const elem = gifts[i];
+      result.push(elem);
+      recursive(i + 1, result);
+      result.pop();
+    }
+  };
+  recursive(0, []);
+
+  sols.sort((a, b) => a.length - b.length);
+  return sols;
+}
+
 const test1 = ["car"];
 const test2 = ["car", "doll"];
 const test3 = ["car", "doll", "puzzle"];
 const test4 = ["a", "b", "c", "d"];
+const test5 = [];
 const res = generateGiftSets(test4);
 for (let i = 0; i < res.length; i++) {
   console.log(res[i]);
