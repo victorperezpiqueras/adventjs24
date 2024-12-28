@@ -27,3 +27,4 @@
 | 23  | ⭐⭐⭐⭐⭐ | ![Medium](https://img.shields.io/badge/-Medium-yellow)  | [JavaScript](23.js) |
 | 24  | ⭐⭐⭐⭐⭐ | ![Medium](https://img.shields.io/badge/-Medium-yellow)  | [JavaScript](24.js) |
 | 25  | ⭐⭐⭐⭐⭐ | ![Medium](https://img.shields.io/badge/-Medium-yellow)  | [JavaScript](25.js) |
+| 26  | ⭐⭐⭐⭐⭐ | ![Easy](https://img.shields.io/badge/-Easy-brightgreen) | [JavaScript](26.js) |
